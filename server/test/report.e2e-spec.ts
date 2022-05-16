@@ -4,7 +4,8 @@ import * as request from 'supertest'
 
 describe('AuthController (e2e)', () => {
   it('', (done) => {
-    const userReports = db.map(({ name, email, gender, registered, reports }) => ({
+    const userReports = db.map(({ _id, name, email, gender, registered, reports }) => ({
+      id: _id,
       name,
       email,
       gender,
