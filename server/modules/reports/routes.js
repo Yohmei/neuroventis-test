@@ -1,14 +1,12 @@
-const koaRouter = require('koa-router');
-const db = require('./db.json');
+const koaRouter = require('koa-router')
+const { getUserReports, getUserDetails, postUserReport } = require('./reportServices')
 
 const router = new koaRouter({
-    prefix: '/report'
-});
+  prefix: '/report',
+})
 
-router.get('/', ctx => {
-    const userReports = db.map(({ name, email, gender, registered, reports }) => { name, email, gender, registered, reports });
-    ctx.status = 200;
-    ctx.body = userReports;
-});
+router.get('/', getUserReports)
+router.get('/:patientId', getUserDetails)
+router.post('/:patientId', postUserReport)
 
-module.exports = router;
+module.exports = router
