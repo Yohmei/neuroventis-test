@@ -26,7 +26,7 @@ const Home = ({ patientReports }) => {
           {patientReports.map(
             (pReport, i) =>
               pReport && (
-                <tr key={i} onClick={() => openPatientDetails(pReport.id)}>
+                <tr key={i} onClick={() => openPatientDetails(pReport._id)}>
                   <td>{pReport.name}</td>
                   <td>{pReport.registered}</td>
                   <td>{pReport.email}</td>

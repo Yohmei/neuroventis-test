@@ -1,6 +1,6 @@
 const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
-const get = async (endpoint) => {
+export const get = async (endpoint) => {
   const url = SERVER_URL + endpoint
   const response = await fetch(url)
 
@@ -11,6 +11,22 @@ const get = async (endpoint) => {
   return null
 }
 
-module.exports = {
-  get,
+export const post = async (endpoint, data) => {
+  const url = SERVER_URL + endpoint
+
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      referrerPolicy: 'same-origin',
+      body: JSON.stringify(data),
+    })
+
+    return response.json()
+  } catch (e) {
+    throw e
+  }
 }

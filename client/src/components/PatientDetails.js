@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { Container, Table } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { get } from '../api/action'
+import PatientForm from './PatientForm'
 
 const PatientDetails = () => {
   const [patientDetails, setPatientDetails] = useState()
@@ -46,6 +47,7 @@ const PatientDetails = () => {
               )}
             </tbody>
           </Table>
+          <PatientForm setPatientDetails={setPatientDetails} patientId={patientId} />
         </div>
       )}
     </Container>
