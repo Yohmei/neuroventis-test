@@ -1,0 +1,20 @@
+{
+  "name": "neuro-x-server",
+  "version": "0.0.1",
+  "description": "This is a server application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "koa": "^2.13.1",
+    "koa-router": "^10.0.0"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
